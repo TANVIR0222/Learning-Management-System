@@ -1,6 +1,10 @@
 import { Geist, Geist_Mono , Inter } from "next/font/google";
 import "./globals.css";
+
+// shadcn ui 
 import { cn } from "@/lib/utils"
+// global toast 
+import { Toaster } from "sonner";
 
 
 const geistSans = Geist({
@@ -24,12 +28,14 @@ const poppins = Inter({
 });
 
 export default function RootLayout({ children }) {
+
   return (
     <html lang="en">
       <body
         className={cn(`${geistSans.variable} ${geistMono.variable} antialiased , poppins.className`)}
       >
         {children}
+        <Toaster richColors position='top-center'/>
       </body>
     </html>
   );
